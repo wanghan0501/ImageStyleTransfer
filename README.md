@@ -12,3 +12,8 @@
 
 ## [NEURAL NETWORK](./neural_network)
 神经网络
+
+代码是论文 [Perceptual Losses for Real-Time Style Transfer and Super-Resolution](https://arxiv.org/abs/1603.08155).
+的实现。
+
+代码实现者为 [hzy46/fast-neural-style-tensorflow](https://github.com/hzy46/fast-neural-style-tensorflow/)，使用说明，点入该库查看。
