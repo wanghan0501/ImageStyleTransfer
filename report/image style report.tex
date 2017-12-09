@@ -145,7 +145,7 @@
 
 风格迁移是指一张图片的艺术风格迁移到另一张图片上，艺术风格是什么以及如何定义一种艺术风格，每个人都有每个人的见解，有些东西大概艺术界也没明确的定义。如何要把一个图像的风格变成另一种风格更是难以定义的问题。
 
-在神经网络之前，传统的图像风格迁移方法有一个共同的思路：分析某一种风格的图像，给那一种风格建立一个数学或者统计模型，再改变要做迁移的图像让它能更好的符合建立的模型。这样做出来效果还是不错的，比如下面的三张图中所示，但一个很大的缺点：一个程序基本只能做某一种风格或者某一个场景。因此基于传统风格迁移研究的实际应用非常有限。
+在神经网络之前，传统的图像风格迁移方法有一个共同的思路：分析某一种风格的图像，给那一种风格建立一个数学或者统计模型，再改变要做迁移的图像让它能更好的符合建立的模型。这种方法有一个很大的缺点：一个程序基本只能做某一种风格或者某一个场景，以及风格转移效果其实不是那么理想，因此基于传统方法的风格迁移研究的实际应用非常有限。
 
 随着深度学习的兴起，以及当代计算机计算能力的快速提高，人工智能算法逐渐走出实验室，投入了科研和商用的诸多领域的实际应用之中。2015年Gatys发表利用深度学习进行图像风格转移的论文\footnote{论文名：A neural algorithm of artistic style，论文地址：https://arxiv.org/pdf/1508.06576v2.pdf}。在这之前让程序模仿任意一张图片画画是没法想象的，也标志着风格转移研究进入了新的历史阶段\cite{history}。
 \section{基于传统方法的风格迁移算法}
@@ -346,6 +346,24 @@ L_{total}(\vec{p},\vec{a},\vec{x})=\alpha L_{content}(\vec{p},\vec{x})+\beta L_{
 \subsection{实验结果}
 
 以下实验结果基于快速风格迁移算法\ref{subsection:快速风格迁移}。
+
+\begin{figure}[H]
+    \centering
+    \subfigure[风格图片]{
+        \label{fig:nn:ref} %% label for first subfigure
+        \includegraphics[width=2.5in]{imgs/ref.jpg}}
+    \hspace{0.1 in}
+    \subfigure[原始图片]{
+        \label{fig:nn:original} %% label for second subfigure
+        \includegraphics[width=2.5 in]{imgs/original.jpg}}
+    \hspace{0.1in}
+    \subfigure[风格迁移图片]{
+        \label{fig:nn:res} %% label for second subfigure
+        \includegraphics[width=2.5 in]{imgs/res.jpg}}
+\caption{基于VGG19的快速风格迁移结果}
+\label{fig:基于VGG19的快速风格迁移结果} 
+\end{figure}
+
 
 \section{算法意义以及未来趋势}
 风格迁移算法一经问世，便受到学术界的广泛关注和探讨。在2016年，Google提出的新论文\emph{A Learned Representation for Artistic Style\footnote{论文地址：https://arxiv.org/pdf/1610.07629.pdf}}中以该算法为基础，提出了新的风格混合算法。这个算法突破了原风格迁移算法只能迁移一个风格图片的风格的限制，其可以提取任意多的风格图片的风格，并根据输入权重任意混合得到的艺术风格，以全新的艺术风格绘制出新的图片。相比起只能做单个风格迁移的风格迁移算法，风格混合算法已经完全迈入艺术创作的领域当中了。
